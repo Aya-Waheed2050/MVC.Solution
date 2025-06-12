@@ -62,16 +62,16 @@ namespace Presentation
 
             builder.Services.AddTransient<ISmsService , SmsService>();
 
-            builder.Services.AddAuthentication(o =>
-            {
-                o.DefaultAuthenticateScheme = GoogleDefaults.AuthenticationScheme;
-                o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-            }).AddGoogle(o => 
-            {
-                IConfiguration googleAuthSection = builder.Configuration.GetSection("Authentication:Google");
-                o.ClientId = googleAuthSection["ClientId"];
-                o.ClientSecret = googleAuthSection["ClientSecret"];
-            });
+            //builder.Services.AddAuthentication(o =>
+            //{
+            //    o.DefaultAuthenticateScheme = GoogleDefaults.AuthenticationScheme;
+            //    o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+            //}).AddGoogle(o => 
+            //{
+            //    IConfiguration googleAuthSection = builder.Configuration.GetSection("Authentication:Google");
+            //    o.ClientId = googleAuthSection["ClientId"];
+            //    o.ClientSecret = googleAuthSection["ClientSecret"];
+            //});
 
             var app = builder.Build();
 
